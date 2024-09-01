@@ -276,13 +276,20 @@
             <fieldset>
                 <legend>Contact Method (Email, Text, Phone)</legend>
 
-                <label for="email">Email<span class="required">*</span></label>
-                <input type="email" name="email" id="email" placeholder="Enter Email" autocomplete="email" required>
+                <input type="radio" name="contact" value="email" id="emailaddress" checked>
+                <label for="email">Email</label>
+                <input type="radio" name="contact" value="text" id="text">
+                <label for="text">Text</label>
+                <input type="radio" name="contact" value="phone" id="phone">
+                <label for="phone">Phone</label>
 
-                <label for="phone-number">Phone<span class="required">*</span></label>
-                <input type="tel" name="phone-number" id="phone-number" placeholder="Enter Telephone Number" autocomplete="tel"
-                    required>
             </fieldset>
+
+            <label for="email">Email<span class="required">*</span></label>
+            <input type="email" name="email" id="email" placeholder="Enter Email" autocomplete="email" required>
+
+            <label for="phone-number">Phone<span class="required">*</span></label>
+            <input type="tel" name="phone-number" id="phone-number" placeholder="Enter Telephone Number" autocomplete="tel" required>
 
             <label for="destination">Destination<span class="required">*</span></label>
             <select name="destination" id="destination" required>
