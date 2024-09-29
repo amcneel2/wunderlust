@@ -47,7 +47,7 @@
                     <h2 class="sr-only">Main Navigation</h2>
                     <!-- hidden but accessible headings from: https://webaim.org/techniques/css/invisiblecontent/ -->
                     <input name="toggle" id="toggle" type="checkbox">
-                    <a href="index.html" onclick="handleClick(event)"><label for="toggle">Menu</label></a>
+                    <label for="toggle">Menu</label>
                     <ul>
                         <li class="active"><a href="#">Destinations</a></li>
                         <li><a href="#">Inspirations</a></li>
@@ -66,7 +66,7 @@
                         <img src="images_2.4/images/majorca-waves.png" alt="Turquoise blue waters with white wave caps crashing against a rock cliff">
                         <img src="images_2.4/images/majorca-beach.png" alt="A calm cove with turquoise waters calmly lapping at a light sand beach">
                         <picture>
-                            <source srcset="images/majorca-cove-small.png"
+                            <source srcset="images_2.4/images/majorca-cove-small.png"
                                 media="(max-width: 500px)">
                             <img src="images_2.4/images/majorca-cove.png" alt="Deep blue water leading to the horizon with the island and trees in the foreground">
                         </picture>
@@ -132,7 +132,7 @@
                 </section>
                 <section id="about">
                     <h3>About Your Destination</h3>
-                    <div>
+                    <div id="about-grid">
                         <section>
                             <img src="images_2.4/images/size.svg" alt="ruler icon">
                             <h4>Size</h4> 
