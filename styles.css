@@ -64,7 +64,6 @@ body {
     font-size: 14px;
     font-weight: 500;
     margin: auto;
-    width: 375px;
 }
 
 #skip {
@@ -557,3 +556,10 @@ fieldset{
 }
 
 /* LARGE SCREENS */
+
+@media screen and (min-width: 740px) {
+
+    body {
+        width: 740px;
+    }
+}
