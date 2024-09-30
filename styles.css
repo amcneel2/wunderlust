@@ -58,6 +58,12 @@ table {
     --black: #000000;
 }
 
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
 body {
     font-family: Montserrat;
     font-size: 14px;
@@ -290,17 +296,10 @@ q {
     font-size: 15px;
 }
 
-form {
-    display: block;
-    box-sizing: border-box;
-    padding-left: 10px;
-}
-
 #contact input, #contact label, legend, #destination, #travelTime {
     display: block;
     width: 75%;
     margin: auto;
-    box-sizing: border-box;
 }
 
 #contact label, legend {
@@ -337,6 +336,46 @@ input[type=submit] {
     font-family: Montserrat;
     font-weight: bold;
 }
+
+.radio-input {
+    display: grid;
+    grid-template-columns: 1em auto;
+    gap: 0.5em;
+}
+
+input[type="radio"] {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 10px;
+    height: 10px;
+    border: 0.15em solid currentColor;
+    border-radius: 50%;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+  }
+
+  input[type="radio"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--form-control-color);
+  }
+
+  input[type="radio"]:checked::before {
+    transform: scale(1);
+  }
+
+  input[type="radio"]:focus {
+    outline: max(2px, 0.15em) solid currentColor;
+    outline-offset: max(2px, 0.15em);
+  }
 
 footer {
     text-align: center;
@@ -638,10 +677,6 @@ footer p, a {
     #plan div {
         display: flex;
     }
-    #plan img {
-        width: 100px;
-        height: 100px;
-    }
     #plan h4 {
         font-size: 12px;
     }
@@ -650,13 +685,10 @@ footer p, a {
     }
     #testimonials div {
         display: flex;
+        justify-content: space-around;
     }
     #about {
         padding: 50px;
-    }
-    #about img {
-        width: 100px;
-        height: 100px;
     }
     form {
         display:grid;
