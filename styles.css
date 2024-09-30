@@ -63,6 +63,8 @@ body {
     font-family: Montserrat;
     font-size: 14px;
     font-weight: 500;
+    margin: auto;
+    width: 375px;
 }
 
 #skip {
@@ -384,6 +386,23 @@ footer p, a {
 /* MEDIUM SCREENS */
 
 @media screen and (min-width: 640px) {
+  
+  #skip {
+    background: white;
+    color: black;
+    border: 5px solid var(--purple);
+    font-family: sans-serif;
+    font-weight: bolder;
+    left: 55%;
+    padding: 5px;
+    position: absolute;
+    transform: translateY(-1000%);
+}
+  
+  body {
+    width: 640px;
+    margin: auto;
+  }
 
     header {
         display: grid;
@@ -398,18 +417,13 @@ footer p, a {
         top: 50px;
     }
     
-	nav{
-		max-width: 1200px;
-		margin: 0 auto;
+	nav {
+		margin: 0;
+    position: absolute;
+    top: 200px;
+    
 	}
-	
-	nav ul{
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr 1fr;
-		gap: 1rem;
-        text-transform: uppercase;
-        font-weight: bold;
-    }
+
 
     #menu-toggle label {
         display: none;
@@ -419,15 +433,19 @@ footer p, a {
         display: none;
     }
 
-    ul {
+    nav ul {
         overflow: visible;
-        position: relative;
         display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        gap: 20px;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+        justify-content: center;
         align-items: center;
-        width: 100%;
-        top: 0
+        text-align: center;
+        max-width: 200px;
+        margin: auto;
+        box-sizing: border-box;
+        text-transform: uppercase;
+        font-weight: bold;
     }
     
     nav li {
@@ -472,6 +490,69 @@ footer p, a {
         font-size: 18px;
         line-height: 2rem;
     }
+
+    #intro {
+        margin: 50px;
+    }
+
+    #img-grid {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: 2fr;
+        justify-content: center;
+        gap: 20px;
+        align-items: stretch;
+    }
+
+    picture {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 2;
+    }
+  
+  #plan div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #plan h4 {
+    position: relative;
+    top: 50px;
+    font-size: 15px;
+  }
+  
+  #testimonials div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  
+  #about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+  
+  form {
+    box-sizing: border-box;
+  }
+  
+fieldset{
+	padding: 0;
+	margin: 0 auto;
+	width: 50%;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+  
+  footer {
+    display: flex;
+    justify-content: space-between;
+  }
+  
 
 }
 
