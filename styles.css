@@ -58,12 +58,11 @@ table {
     --black: #000000;
 }
 
-
 body {
     font-family: Montserrat;
     font-size: 14px;
     font-weight: 500;
-    margin: auto;
+    margin: 0 auto;
 }
 
 #skip {
@@ -168,11 +167,19 @@ h2 {
 }
 
 #img-grid {
-    display: flex;
-    flex-direction: column;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    box-sizing: content-box;
     width: 100%;
     margin: auto;
     padding-bottom: 10px;
+    
+}
+
+#img-grid img {
+    width: 100%;
+    padding-bottom: 15px;
 }
 
 #intro img:last-child {
@@ -196,8 +203,8 @@ h2 {
 
 #plan h4 {
     position: relative;
-    top: 40px;
-    font-size: 20px;
+    top: 60px;
+    font-size: 30px;
     text-transform: uppercase;
     font-weight:bold;
 }
@@ -384,85 +391,65 @@ footer p, a {
 
 /* MEDIUM SCREENS */
 
-@media screen and (min-width: 640px) {
-  
-  #skip {
-    background: white;
-    color: black;
-    border: 5px solid var(--purple);
-    font-family: sans-serif;
-    font-weight: bolder;
-    left: 55%;
-    padding: 5px;
-    position: absolute;
-    transform: translateY(-1000%);
-}
-  
-  body {
-    width: 640px;
-    margin: auto;
-  }
-
+@media screen and (min-width: 834px) {
+    #skip {
+        background: white;
+        color: black;
+        border: 5px solid var(--purple);
+        font-family: sans-serif;
+        font-weight: bolder;
+        left: 55%;
+        padding: 5px;
+        position: absolute;
+        transform: translateY(-1000%);
+    }
     header {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        background-image: linear-gradient(#55BCD5, white);
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
-    
     header img {
         grid-column-start: 1;
         grid-column-end: 2;
         position: relative;
         top: 50px;
     }
-    
-	nav {
-		margin: 0;
-    position: absolute;
-    top: 200px;
-    
-	}
-
-
+    nav {
+        margin: 0;
+        position: absolute;
+        top: 200px;
+    }
     #menu-toggle label {
         display: none;
     }
-
     #toggle {
         display: none;
     }
-
     nav ul {
         overflow: visible;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 1rem;
         justify-content: center;
         align-items: center;
-        text-align: center;
-        max-width: 200px;
-        margin: auto;
-        box-sizing: border-box;
         text-transform: uppercase;
         font-weight: bold;
+        position: relative;
+        top: -50px;
     }
-    
     nav li {
         border: none;
-        width: 100%;
     }
-    
     nav a {
         background-color: var(--yellow);
         color: black;
         text-decoration: none;
         padding: 20px;
+        width: 100%;
+        margin: 0;
+        text-align: center;
     }
-
     nav a:hover {
         background-color: white;
     }
-    
     h1 {
         grid-column-start: 2;
         grid-column-end: 5;
@@ -477,7 +464,6 @@ footer p, a {
         position: relative;
         top: 50px;
     }
-    
     header p {
         grid-column-start: 2;
         grid-column-end: 5;
@@ -489,77 +475,210 @@ footer p, a {
         font-size: 18px;
         line-height: 2rem;
     }
-
     #intro {
         margin: 50px;
     }
-
+    #intro h2 {
+        padding-top: 50px;
+    }
     #img-grid {
         display: grid;
-        grid-template-columns: 1fr 2fr;
+        grid-template-columns: fit-content(1fr 2fr);
         grid-template-rows: 2fr;
         justify-content: center;
         gap: 20px;
-        align-items: stretch;
+        width: 100%;
     }
-
     picture {
         grid-column-start: 1;
         grid-column-end: 3;
         grid-row-start: 2;
     }
-  
-  #plan div {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  #plan h4 {
-    position: relative;
-    top: 50px;
-    font-size: 15px;
-  }
-  
-  #testimonials div{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-  }
-  
-  #about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-  }
-  
-  form {
-    box-sizing: border-box;
-  }
-  
-fieldset{
-	padding: 0;
-	margin: 0 auto;
-	width: 50%;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-}
-  
-  footer {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-
-}
-
-/* LARGE SCREENS */
-
-@media screen and (min-width: 740px) {
-
-    body {
-        width: 740px;
+    #plan div {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        justify-content: center;
+        align-items: center;
     }
+    #plan img {
+        width: 200px;
+        height: 200px;
+    }
+    #plan h4 {
+        position: relative;
+        top: 50px;
+        font-size: 20px;
+    }
+    #testimonials div{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    #about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+    form {
+        box-sizing: border-box;
+    }
+    fieldset{
+        padding: 0;
+        margin: 0 auto;
+        width: 50%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    footer {
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
+/* LARGE SCREENS */ 
+
+@media screen and (min-width: 1024px) {
+
+    #skip {
+        background: white;
+        color: black;
+        border: 5px solid var(--purple);
+        font-family: sans-serif;
+        font-weight: bolder;
+        left: 55%;
+        padding: 5px;
+        position: absolute;
+        transform: translateY(-1000%);
+    }
+    header {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    header img {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        position: relative;
+        top: 50px;
+    }
+    nav {
+        margin: 0;
+        position: absolute;
+        top: 15px;
+        left: 50%;
+    }
+    #menu-toggle label {
+        display: none;
+    }
+    #toggle {
+        display: none;
+    }
+    nav ul {
+        overflow: visible;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    nav li {
+        border: none;
+        width: 100%;
+    }
+    nav a {
+        background-color: var(--yellow);
+        color: black;
+        text-decoration: none;
+        padding: 20px;
+    }
+    nav a:hover {
+        background-color: white;
+    }
+    h1 {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        font-family: Molle;
+        font-style: italic;
+        font-size: 48px;
+        padding-top: 15px;
+        padding-left: 15px;
+        position: relative;
+        top: 50px;
+        right: 60%;
+    }
+    header p {
+        grid-column-start: 2;
+        grid-column-end: 5;
+        grid-row-start: 2;
+        padding-left: 15px;
+        padding-bottom: 15px;
+        position: relative;
+        top: 0px;
+        right: 30%;
+        font-size: 18px;
+        line-height: 2rem;
+    }
+    #intro {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    #intro h2, #intro p {
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+    #plan {
+        padding: 50px;
+    }
+    #plan div {
+        display: flex;
+    }
+    #plan img {
+        width: 100px;
+        height: 100px;
+    }
+    #plan h4 {
+        font-size: 12px;
+    }
+    #testimonials {
+        padding: 50px;
+    }
+    #testimonials div {
+        display: flex;
+    }
+    #about {
+        padding: 50px;
+    }
+    #about img {
+        width: 100px;
+        height: 100px;
+    }
+    form {
+        display:grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    footer {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: 1fr;
+    }
+    footer p {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        justify-content: left;
+        align-items: start;
+    }
+    footer a {
+        grid-column-start: 7;
+        grid-column-end: 9;
+    }
+    footer a:last-child {
+        grid-column-start: 9;
+        grid-column-end: 10;
+    } 
 }
