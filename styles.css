@@ -296,7 +296,7 @@ q {
     font-size: 15px;
 }
 
-#contact input, #contact label, legend, #destination, #travelTime {
+#contact label, legend, #email, #phone, #mySubmit, #fName, #lName, #destination, #travelTime {
     display: block;
     width: 75%;
     margin: auto;
@@ -312,7 +312,7 @@ q {
     padding-bottom: 10px;
 }
 
-#contact input {
+#lName, #fName, #mySubmit, #email, #phone {
     padding: 10px;
     margin-bottom: 24px;
     border-radius: 5px;
@@ -328,7 +328,7 @@ select {
     padding: 10px;
 }
 
-input[type=submit] {
+input[type="submit"] {
     padding: 50px;
     background-color: var(--purple);
     color: white;
@@ -337,25 +337,22 @@ input[type=submit] {
     font-weight: bold;
 }
 
-.radio-input {
+fieldset {
     display: grid;
-    grid-template-columns: 1em auto;
-    gap: 0.5em;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
 }
 
 input[type="radio"] {
-    -webkit-appearance: none;
     appearance: none;
     margin: 0;
-    font: inherit;
-    color: currentColor;
-    width: 10px;
-    height: 10px;
-    border: 0.15em solid currentColor;
+    color: var(--purple);
+    width: 30px;
+    height: 30px;
+    border: 0.15em solid var(--purple);
     border-radius: 50%;
-    transform: translateY(-0.075em);
-    display: grid;
-    place-content: center;
+    transform: translateY(0.5em);
   }
 
   input[type="radio"]::before {
@@ -365,7 +362,7 @@ input[type="radio"] {
     border-radius: 50%;
     transform: scale(0);
     transition: 120ms transform ease-in-out;
-    box-shadow: inset 1em 1em var(--form-control-color);
+    box-shadow: inset 1em 1em var(--purple);
   }
 
   input[type="radio"]:checked::before {
@@ -373,7 +370,7 @@ input[type="radio"] {
   }
 
   input[type="radio"]:focus {
-    outline: max(2px, 0.15em) solid currentColor;
+    outline: max(2px, 0.15em) solid var(--purple);
     outline-offset: max(2px, 0.15em);
   }
 
